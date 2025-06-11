@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 export default function AddEditProduct() {
-  const [product, setProduct] = useState({ name: "", quantity: "" });
+  const [product, setProduct] = useState({ name: "", Product: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Product added " + JSON.stringify(product));
-    setProduct({ name: "", quantity: "" });
+    setProduct({ Name: "", Product: "" });
   };
 
   return (
@@ -21,9 +21,9 @@ export default function AddEditProduct() {
       />
       <input
         type="number"
-        placeholder="Quantity"
-        value={product.quantity}
-        onChange={(e) => setProduct({ ...product, quantity: e.target.value })}
+        placeholder="Product"
+        value={product.Product}
+        onChange={(e) => setProduct({ ...product, Product: e.target.value })}
         style={{ marginRight: "10px", background: "rgb(250, 25, 25)" }}
 
       />
