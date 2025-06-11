@@ -5,7 +5,7 @@ export default function AddEditProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Product added (not persisted): " + JSON.stringify(product));
+    alert("Product added " + JSON.stringify(product));
     setProduct({ name: "", quantity: "" });
   };
 
@@ -17,12 +17,15 @@ export default function AddEditProduct() {
         placeholder="Name"
         value={product.name}
         onChange={(e) => setProduct({ ...product, name: e.target.value })}
+        style={{ marginRight: "10px", background: "rgb(242, 18, 18)" }}
       />
       <input
         type="number"
         placeholder="Quantity"
         value={product.quantity}
         onChange={(e) => setProduct({ ...product, quantity: e.target.value })}
+        style={{ marginRight: "10px", background: "rgb(250, 25, 25)" }}
+
       />
       <button type="submit">Add Product</button>
     </form>

@@ -1,7 +1,7 @@
 import React from "react";
 const Dashboard = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6  min-h-screen">
         <div className="dashboard">
          <h2>Manager Dashboard</h2>
          <p>View insights, reports, or analytics here.</p>
@@ -25,7 +25,7 @@ const Dashboard = () => {
 
       {/* Country Sales + Weekly Chart */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className= " bg-white p-4 rounded-lg shadow">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold">Sales by Country</h2>
             <a href="#" className="text-blue-500 text-sm">View Full Report</a>

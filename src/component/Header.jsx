@@ -9,7 +9,7 @@ export default function Header() {
   }, [theme]);
 
   return (
-    <header className="header">
+    <header className="header weght-bold text-x  p-4 flex justify-between  items-center bg-gray-800 ">
       <h1>Slooze Commodities</h1>
       <div>
         <span>{user.role}</span>

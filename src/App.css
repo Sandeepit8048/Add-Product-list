@@ -43,20 +43,21 @@
 
 
 body.light {
-  background-color: #f9f9f9;
-  color: #000;
+  background-color: #fcf3f3;
+  color: #d6e49c;
+  font-weight: 600;
 }
 
 body.dark {
   background-color: #121212;
-  color: #fff;
+  color: #05f952;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background: #eee;
+  background: #ad0a0a;
 }
 
 button {
