@@ -6,6 +6,7 @@ import ProductList from "./component/ProductList";
 import AddEditProduct from "./component/AddEditProduct";
 import Header from "./component/Header";
 import "./app.css";
+import Store from './assets/store.webp';
 
 function AppContent() {
   const { user } = useAuth();
@@ -13,7 +14,17 @@ function AppContent() {
   if (!user) return <Login />;
 
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        backgroundImage: `url(${Store})`,
+        backgroundSize: "cover", // Use "cover" for full background
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        width: "100%",
+      }}
+    >
       <Header />
       <ProductList />
       {user.role === "Manager" && <Dashboard />}
