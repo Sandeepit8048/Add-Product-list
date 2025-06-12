@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthProvider, useAuth } from "./context/Authercontext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import Login from "./component/login";
 import Dashboard from "./component/Dashboard";
 import ProductList from "./component/ProductList";

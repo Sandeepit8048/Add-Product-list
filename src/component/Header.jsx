@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../context/Authercontext";
+import { useAuth } from "../context/AuthContext";
 export default function Header() {
   const [theme, setTheme] = useState("light");
   const { logout, user } = useAuth();
