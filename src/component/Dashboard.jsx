@@ -17,7 +17,7 @@ const Dashboard = () => {
   const pieData = [
     { name: "Mumbai", value: 400 },
     { name: "Noida", value: 300 },
-    { name: "Bengaluru", value: 300 },
+    { name: "Bengaluru", value: 200 },
   ];
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
