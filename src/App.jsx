@@ -5,7 +5,7 @@ import Dashboard from "./component/Dashboard";
 import ProductList from "./component/ProductList";
 import AddEditProduct from "./component/AddEditProduct";
 import Header from "./component/Header";
-import "./app.css";
+import "./App.css";
 
 function AppContent() {
   const { user } = useAuth();
