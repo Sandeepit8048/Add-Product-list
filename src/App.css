@@ -44,7 +44,7 @@
 
 body.light {
   background-color: #fcf3f3;
-  color: #d6e49c;
+  color: #07f62b;
   font-weight: 600;
 }
 
@@ -55,9 +55,11 @@ body.dark {
 
 header {
   display: flex;
+  justify-content: center;
   justify-content: space-between;
   padding: 1rem;
   background: #ad0a0a;
+  flex-wrap: wrap;
 }
 
 button {
@@ -67,7 +69,7 @@ button {
 }
 
 .product-list, .dashboard, .add-product {
-  margin: 1rem;
+  /* margin: 1rem; */
   padding: 1rem;
   border: 1px solid #aaa;
 }

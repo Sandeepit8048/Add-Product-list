@@ -5,25 +5,39 @@ import {
   Cell,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
 } from "recharts";
 
 const Dashboard = () => {
   const pieData = [
-    { name: "France", value: 400 },
-    { name: "Italy", value: 300 },
-    { name: "Norway", value: 300 }
+    { name: "Mumbai", value: 400 },
+    { name: "Noida", value: 300 },
+    { name: "Bengaluru", value: 300 },
   ];
+
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
+
+  const barData = [
+    { category: "Bags", sales: 2400 },
+    { category: "Shoes", sales: 1398 },
+    { category: "Watches", sales: 980 },
+    { category: "Jewelry", sales: 3908 },
+    { category: "Hats", sales: 4800 },
+  ];
 
   return (
     <div className="p-6 min-h-screen bg-gray-50">
-      <div className="dashboard mb-6">
+      <div className="mb-6">
         <h2 className="text-2xl font-bold">Manager Dashboard</h2>
         <p className="text-gray-600">View insights, reports, or analytics here.</p>
       </div>
 
-      {/* Summary Cards */}
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
         {[
           { label: "Total Revenue", value: "$60.6k", icon: "💰" },
@@ -39,12 +53,10 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* Country Sales + Pie Chart */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        {/* Sales by Country */}
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">Sales by Country</h2>
+            <h2 className="text-lg font-semibold">Sales by State</h2>
             <a href="#" className="text-blue-500 text-sm">View Full Report</a>
           </div>
           {[
@@ -69,9 +81,8 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Pie Chart */}
         <div className="bg-white p-4 rounded-lg shadow">
-          <h2 className="text-lg font-semibold mb-4">Weekly Sales (France, Italy, Norway)</h2>
+          <h2 className="text-lg font-semibold mb-4">Weekly Sales (Mumbai, Noida, Bengaluru)</h2>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
@@ -95,15 +106,21 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Product Sales + Product Table */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Product Sales */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h2 className="text-lg font-semibold mb-4">Product Sales</h2>
-          <div className="text-sm text-gray-500">[Bar Chart Placeholder for Bags & Shoes]</div>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={barData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="category" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="sales" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
 
-        {/* Top Products Table */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h2 className="text-lg font-semibold mb-4">Top Products</h2>
           <div className="overflow-x-auto">
@@ -117,9 +134,9 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {Array(6).fill().map((_, idx) => (
+                {Array(5).fill().map((_, idx) => (
                   <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="py-2">Women shirt</td>
+                    <td className="py-2">Rice</td>                    
                     <td>
                       <span className="text-green-700 bg-green-100 px-2 py-1 rounded-full text-xs">
                         In Stock
